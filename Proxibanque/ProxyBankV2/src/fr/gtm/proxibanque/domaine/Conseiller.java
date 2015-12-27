@@ -1,4 +1,4 @@
-package fr.GTM.PBV2.domaine;
+package fr.gtm.proxibanque.domaine;
 
 /**
  * Classe métier Conseiller avec les propriétés : idConseiller, nom, prenom, login et mdp.

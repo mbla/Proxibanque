@@ -1,4 +1,4 @@
-package fr.GTM.PBV2.domaine;
+package fr.gtm.proxibanque.domaine;
 
 /**
  * Classe abstraite Compte avec les propriétés : numCompte, solde, dateOuverture et idclient. <br/>

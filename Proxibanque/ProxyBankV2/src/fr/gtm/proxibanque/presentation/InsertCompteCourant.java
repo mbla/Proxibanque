@@ -1,4 +1,4 @@
-package fr.GTM.PBV2.presentation;
+package fr.gtm.proxibanque.presentation;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import fr.GTM.PBV2.domaine.Client;
-import fr.GTM.PBV2.domaine.Compte;
-import fr.GTM.PBV2.domaine.CompteCourant;
-import fr.GTM.PBV2.service.IConseillerService;
+import fr.gtm.proxibanque.domaine.Client;
+import fr.gtm.proxibanque.domaine.Compte;
+import fr.gtm.proxibanque.domaine.CompteCourant;
+import fr.gtm.proxibanque.service.IConseillerService;
 
 /**
  * Servlet implementation class InsertCompte <br/><br/>

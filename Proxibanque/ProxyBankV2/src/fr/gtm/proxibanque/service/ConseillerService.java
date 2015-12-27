@@ -1,13 +1,13 @@
-package fr.GTM.PBV2.service;
+package fr.gtm.proxibanque.service;
 
 import java.util.ArrayList;
 
 import javax.inject.Inject;
 
-import fr.GTM.PBV2.domaine.Client;
-import fr.GTM.PBV2.domaine.Compte;
-import fr.GTM.PBV2.domaine.Conseiller;
-import fr.GTM.PBV2.dao.IConseillerDao;
+import fr.gtm.proxibanque.dao.IConseillerDao;
+import fr.gtm.proxibanque.domaine.Client;
+import fr.gtm.proxibanque.domaine.Compte;
+import fr.gtm.proxibanque.domaine.Conseiller;
 
 /**
  * Classe ConseillerService, implémentant les méthodes de l'interface IConseillerService. <br/>

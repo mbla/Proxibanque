@@ -1,4 +1,4 @@
-package fr.GTM.PBV2.domaine;
+package fr.gtm.proxibanque.domaine;
 
 
 

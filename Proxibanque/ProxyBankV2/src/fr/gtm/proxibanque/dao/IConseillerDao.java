@@ -1,10 +1,10 @@
-package fr.GTM.PBV2.dao;
+package fr.gtm.proxibanque.dao;
 
 import java.util.ArrayList;
 
-import fr.GTM.PBV2.domaine.Client;
-import fr.GTM.PBV2.domaine.Compte;
-import fr.GTM.PBV2.domaine.Conseiller;
+import fr.gtm.proxibanque.domaine.Client;
+import fr.gtm.proxibanque.domaine.Compte;
+import fr.gtm.proxibanque.domaine.Conseiller;
 
 /**
  * Interface dont les méthodes sont implémentées parla classe ConseillerDao. <br/>
