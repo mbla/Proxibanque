@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
-  <display-name>ProxyBankV2</display-name>
+  <display-name>ProxibanqueSI</display-name>
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <servlet>
     <servlet-name>InsertClient</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.InsertClient</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.InsertClient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>InsertClient</servlet-name>
@@ -14,7 +14,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>Login</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.Login</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.Login</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Login</servlet-name>
@@ -22,7 +22,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>RemoveClient</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.RemoveClient</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.RemoveClient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>RemoveClient</servlet-name>
@@ -30,7 +30,7 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>GetClient</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.GetClient</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.GetClient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>GetClient</servlet-name>
@@ -38,46 +38,37 @@
   </servlet-mapping>
   <servlet>
     <servlet-name>UpdateClient</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.UpdateClient</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.UpdateClient</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>UpdateClient</servlet-name>
     <url-pattern>/servUpdateClient</url-pattern>
   </servlet-mapping>
-  
   <servlet>
     <servlet-name>VirementCompte</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.VirementCompte</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.VirementCompte</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>VirementCompte</servlet-name>
     <url-pattern>/servVirementCompte</url-pattern>
   </servlet-mapping>
-  
-    <servlet>
+  <servlet>
     <servlet-name>InsertCompteCourant</servlet-name>
-    <servlet-class>fr.GTM.PBV2.presentation.InsertCompteCourant</servlet-class>
+    <servlet-class>fr.gtm.proxibanque.presentation.InsertCompteCourant</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>InsertCompteCourant</servlet-name>
     <url-pattern>/servInsertCompteCourant</url-pattern>
   </servlet-mapping>
-  
   <error-page>
-	<error-code>404</error-code>
-	<location>/erreur.jsp</location>
+    <error-code>404</error-code>
+    <location>/erreur.jsp</location>
   </error-page>
-	
   <error-page>
-	<exception-type>java.lang.Exception</exception-type>
-	<location>/erreur.jsp</location>
+    <exception-type>java.lang.Exception</exception-type>
+    <location>/erreur.jsp</location>
   </error-page>
-	
-	<listener>
-		<listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
-	</listener>
-  
-  
-  
-  
+  <listener>
+    <listener-class>org.jboss.weld.environment.servlet.Listener</listener-class>
+  </listener>
 </web-app>

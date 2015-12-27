@@ -3,6 +3,7 @@ package fr.gtm.proxibanque.dao;
 import static util.Bdd.seConnecter;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -122,7 +123,7 @@ public class ConseillerDao implements IConseillerDao{
 	            //Creation du statement
 	             Statement stmt = con.createStatement();
 	       
-	            String sql = "select idclient, nom, prenom, adresse, codepostal, ville, telephone, email from client where idconseiller ='"+idconseiller+"'" ;
+	            String sql = "SELECT idclient, nom, prenom, adresse, codepostal, ville, telephone, email FROM client WHERE idconseiller ='"+idconseiller+"'" ;
 	        
 	            // Envoi du statement
 	            ResultSet rs = stmt.executeQuery (sql);
@@ -189,7 +190,6 @@ public class ConseillerDao implements IConseillerDao{
 	               client.setTelephone(rs.getString("telephone"));
 	               client.setEmail(rs.getString("email"));
 	              
-	              
 	            }
 
 	            Bdd.seDeconnecter(con);
@@ -212,13 +212,30 @@ public class ConseillerDao implements IConseillerDao{
 	            //Connection
 	            Connection con = seConnecter();
 	            //Creation du statement
-	             Statement stmt = con.createStatement();
-	       
-	            String sql = "update client set nom = '"+client.getNom()+"', prenom = '"+client.getPrenom()+"', adresse ='"+client.getAdresse()+
-	                "', codepostal = '"+client.getCodePostal()+"', ville = '"+client.getVille()+"', telephone = '"+client.getTelephone()+"', email = '"+client.getEmail()+"'"
-	                    + " where idclient = "+ ""+client.getIdClient() ;
-
-	            stmt.executeUpdate(sql);
+//	             Statement stmt = con.createStatement();
+//	            
+//	            String sql = "UPDATE client SET nom = '"+client.getNom()+"', prenom = '"+client.getPrenom()+"', "
+//	            		+ "adresse ='"+client.getAdresse()+ "', codepostal = '"+client.getCodePostal()+"', ville = '"
+//	            		+client.getVille()+"', telephone = '"+client.getTelephone()+"', email = '"+client.getEmail()+"'"
+//		                    + " WHERE idclient = '"+client.getIdClient()+"'";
+//
+//	            stmt.executeUpdate(sql);
+	            
+	            String sql = "UPDATE client SET nom = ?, prenom = ?, adresse = ?, codepostal = ?, ville = ?, "
+	            		+ "telephone = ?, email = ? WHERE idclient = ?";
+	            
+	            PreparedStatement stm = con.prepareStatement(sql);
+	            
+	            stm.setString(1, client.getNom());
+	            stm.setString(2, client.getPrenom());
+	            stm.setString(3,client.getAdresse());
+	            stm.setString(4, client.getCodePostal());
+	            stm.setString(5, client.getVille());
+	            stm.setString(6, client.getTelephone());
+	            stm.setString(7, client.getEmail());
+	            stm.setInt(8, client.getIdClient());
+	            
+	            stm.executeUpdate();
 	          
 	            Bdd.seDeconnecter(con);
 	        }catch (SQLException ex) {
